@@ -66,30 +66,33 @@ CREATE TABLE alumnos (
     email VARCHAR(100)
 );
 
----------------Tabla profesores_impartiendo
+--Tabla profesores_impartiendo
 CREATE TABLE profesores_impartiendo (
     id_profes VARCHAR(15) REFERENCES profesores(id_profes),
-    id_campus INT REFERENCES campus(id_campus),
     id_curso INT REFERENCES cursos(id_curso),
+    id_campus INT REFERENCES campus(id_campus),
+    categoria VARCHAR(10),
     id_aula INT REFERENCES aulas(id_aula),
     id_promocion INT REFERENCES promociones(id_promocion),
     id_modalidad INT REFERENCES modalidades(id_modalidad),
-    id_modalidad_temp INT REFERENCES modalidades_temp(id_modalidad_temp)
+    id_modalidad_temp INT REFERENCES modalidades_temp(id_modalidad_temp),
+    PRIMARY KEY (id_profes, id_curso, id_campus)
 );
 
----------------Tabla alumnos_cursando
+-- Tabla alumnos_cursando
 CREATE TABLE alumnos_cursando (
     id_alumno VARCHAR(15) REFERENCES alumnos(id_alumno),
     id_curso INT REFERENCES cursos(id_curso),
-    id_profes VARCHAR(15) REFERENCES profesores(id_profes),
+    id_campus INT REFERENCES campus(id_campus),
     id_aula INT REFERENCES aulas(id_aula),
     id_promocion INT REFERENCES promociones(id_promocion),
+    fecha_comienzo DATE,
     id_modalidad INT REFERENCES modalidades(id_modalidad),
     id_modalidad_temp INT REFERENCES modalidades_temp(id_modalidad_temp),
     PRIMARY KEY (id_alumno, id_curso)
 );
 
---------------- Tabla proyecto_alumno
+-- Tabla proyecto_alumno
 CREATE TABLE proyecto_alumnos (
     id_alumno VARCHAR(15) REFERENCES alumnos(id_alumno),
     id_proyecto INT REFERENCES proyectos(id_proyecto),

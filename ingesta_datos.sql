@@ -155,3 +155,49 @@ VALUES
 ('18C', (SELECT id_campus FROM campus WHERE sede = 'Bilbao'), 'Merche Fernández', 'Student Advisor'),
 ('19C', (SELECT id_campus FROM campus WHERE sede = 'Bilbao'), 'Asier López', 'Secretaría-Mañana'),
 ('20C', (SELECT id_campus FROM campus WHERE sede = 'Bilbao'), 'Iker Casillas', 'Secretaría-Tarde');
+
+
+-- Insertar información en la tabla 'alumnos_cursando'
+INSERT INTO alumnos_cursando(id_alumno, id_curso, id_campus , id_aula, id_promocion, fecha_comienzo, id_modalidad, id_modalidad_temp)
+VALUES
+((SELECT id_alumno FROM alumnos where))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- Insertar información en la tabla 'profesores_impartiendo'
+INSERT INTO profesores_impartiendo(id_profes, id_curso, id_campus, categoria, id_aula, id_promocion, id_modalidad, id_modalidad_temp)
+VALUES
+('1B', 2, 1, 'TA', (SELECT id_aula FROM aulas WHERE id_campus = 1 AND id_curso = 2) , 1, 2, 1),
+('2B', 2, 1, 'TA',(SELECT id_aula FROM aulas WHERE id_campus = 1 AND id_curso = 2) , 1, 2, 1),
+('3B', 1, 1,'TA', (SELECT id_aula FROM aulas WHERE id_campus = 1 AND id_curso = 1) , 1,2,1),
+('4B', 1,2, 'TA', (SELECT id_aula FROM aulas WHERE id_campus = 2 AND id_curso = 1) ,1,2,1),
+('5B', 1,2 , 'TA', (SELECT id_aula FROM aulas WHERE id_campus = 2 AND id_curso = 1) , 2, 2,1),
+('6B',1, 1, 'TA', (SELECT id_aula FROM aulas WHERE id_campus = 1 AND id_curso = 1) , 2,2,2),
+('7B', 2, 1, 'TA', (SELECT id_aula FROM aulas WHERE id_campus = 1 AND id_curso = 2) , 1,2,1),
+('8B',1, 2, 'LI', (SELECT id_aula FROM aulas WHERE id_campus = 2 AND id_curso = 1) ,2, 1, 2),
+('9B', 1,1 , 'LI', (SELECT id_aula FROM aulas WHERE id_campus = 1 AND id_curso = 1), 1, 1, 1),
+('10B',2,1 , 'LI', (SELECT id_aula FROM aulas WHERE id_campus = 1 AND id_curso = 2) , 1,1,2),
+('11B', 2, 1, 'LI', (SELECT id_aula FROM aulas WHERE id_campus = 1 AND id_curso = 2) , 1, 2, 1),
+('12B', 1, 1 , 'LI', (SELECT id_aula FROM aulas WHERE id_campus = 1 AND id_curso = 1), 1, 2 ,1);
+
+
+
