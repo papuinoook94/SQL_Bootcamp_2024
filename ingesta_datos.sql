@@ -23,7 +23,7 @@ VALUES
 ('Presencial');
 
 --Insertar datos en la tabla 'modalidades_temp'
-INSERT INTO modalidades_temp(modalidad_temp)
+INSERT INTO modalidades_temp(modalidad_temporal)
 VALUES 
 ('Full-Time'), 
 ('Part-Time');
