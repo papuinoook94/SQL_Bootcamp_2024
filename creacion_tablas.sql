@@ -1,6 +1,6 @@
 -- Tabla aulas
 CREATE TABLE aulas (
-    id_aulas SERIAL PRIMARY KEY,
+    id_aula SERIAL PRIMARY KEY,
     id_campus INT REFERENCES campus(id_campus),
     id_curso INT REFERENCES cursos(id_curso),
     info_aula VARCHAR(100)
